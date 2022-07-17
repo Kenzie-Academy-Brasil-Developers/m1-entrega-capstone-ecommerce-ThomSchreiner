@@ -41,20 +41,28 @@ header .container div h1 {
 
 header .container nav {
     display: flex;
-    gap: 25px;
+    gap: 8px;
 }
 
 header .container nav button {
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     font-weight: 400;
     font-size: 16px;
     color: #242424;
     cursor: pointer;
+    padding: 7px 11px;
+    transition: 0.3s;
 }
 
 header .container nav button:nth-child(1) {
     font-weight: 600;
     color: #292929;
+}
+
+header .container nav button:hover {
+    background-color: #37268C;
+    color: #FFFFFF;
+    transition: 0.3s;
 }
 
 /* Página principal */
@@ -79,7 +87,14 @@ main .vitrine ul li {
     width: 32%;
     margin-bottom: 20px;
     border: 2px solid #F5F5F5;
+    transition: 0.2s;
 }
+
+main .vitrine ul li:hover {
+    border-color: #7B61FF;
+    transition: 0.2s;
+}
+
 
 main .vitrine ul li figure {
     background: #F5F5F5;
@@ -134,6 +149,15 @@ main .vitrine ul li article button {
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
+    transition: 0.5s;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+}
+
+main .vitrine ul li article button:hover {
+    color: #2E245E;
+    text-decoration-color: #2E245E;
+    transition: 0.5s;
 }
 
 /* Barra de pesquisa */
@@ -167,6 +191,12 @@ main aside .section-pesquisa button {
     font-size: 16px;
     padding: 0 20px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+main aside .section-pesquisa button:hover {
+    background-color: #37268C;
+    transition: 0.3s;
 }
 
 /* Carrinho de compras */
@@ -239,9 +269,16 @@ main aside .section-carrinho div ul li div button {
     color: #242424;
     background-color: #F5F5F5;
     cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: 0.5s;
 }
 
-
+main aside .section-carrinho div ul li div button:hover {
+    text-decoration-color: #2E245E;
+    color: #2E245E;
+    transition: 0.5s;
+}
 
 main aside .section-carrinho div table {
     background-color: #292929;
