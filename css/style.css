@@ -1,0 +1,266 @@
+/* Reset Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    
+}
+
+/* Classe geral */
+.container {
+    width: 1200px;
+}
+
+/* Cabeçalho */
+header {
+    height: 70px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header .container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container div h1 {
+    color: #292929;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+header .container nav {
+    display: flex;
+    gap: 25px;
+}
+
+header .container nav button {
+    background: #FFFFFF;
+    font-weight: 400;
+    font-size: 16px;
+    color: #242424;
+    cursor: pointer;
+}
+
+header .container nav button:nth-child(1) {
+    font-weight: 600;
+    color: #292929;
+}
+
+/* Página principal */
+main {
+    margin: 120px auto 30px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .vitrine {
+    width: 68%;
+}
+
+main .vitrine ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .vitrine ul li {
+    width: 32%;
+    margin-bottom: 20px;
+    border: 2px solid #F5F5F5;
+}
+
+main .vitrine ul li figure {
+    background: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    border: 4px solid #F5F5F5;
+}
+
+main .vitrine ul li figure img {
+    height: 100%;
+}
+
+main .vitrine ul li article {
+    padding: 15px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+main .vitrine ul li article p:nth-child(1) {
+    display: inline-block;
+    background-color: #2E245E;
+    padding: 5px 12px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+main .vitrine ul li article p:nth-child(2) {
+    font-weight: 700;
+    font-size: 18px;
+    color: #292929;
+}
+
+main .vitrine ul li article span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #242424;
+}
+
+main .vitrine ul li article .preco {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2E245E;
+}
+
+main .vitrine ul li article button {
+    background-color: #FFFFFF;
+    color: #242424;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Barra de pesquisa */
+main aside {
+    width: 28%;
+}
+
+main aside .section-pesquisa {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 25px;
+    width: 100%;
+    
+}
+
+main aside .section-pesquisa input {
+    height: 50px;
+    background: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    padding-left: 13px;
+    width: 70%;
+    font-weight: 400;
+    font-size: 14px;
+    color: #242424;
+}
+
+main aside .section-pesquisa button {
+    background-color: #2E245E;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+/* Carrinho de compras */
+main aside .section-carrinho {
+    width: 100%;
+}
+
+main aside .section-carrinho p {
+    background: #37268C;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFFFFF;
+    width: 100%;
+    text-align: center;
+    padding: 13px 0;
+}
+
+main aside .section-carrinho div {}
+
+main aside .section-carrinho div ul {
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 20px 0 15px;
+    gap: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+main aside .section-carrinho div ul li {
+    display: flex;
+    height: 90px;
+}
+
+main aside .section-carrinho div ul li figure {
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+main aside .section-carrinho div ul li figure img {
+    height: 80%;
+}
+
+main aside .section-carrinho div ul li div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 15px;
+}
+
+main aside .section-carrinho div ul li div p {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333333;
+    background-color: #F5F5F5;
+    padding: 0;
+    text-align: start;
+}
+
+main aside .section-carrinho div ul li div p:nth-child(2) {
+    color: #2E245E;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+main aside .section-carrinho div ul li div button {
+    font-weight: 400;
+    font-size: 14px;
+    color: #242424;
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+
+
+main aside .section-carrinho div table {
+    background-color: #292929;
+    width: 100%;
+    padding: 15px;
+
+}
+
+main aside .section-carrinho div table tr {
+    line-height: 35px;
+}
+
+main aside .section-carrinho div table th {
+    color: #FFFFFF;
+    font-weight: 600;
+    text-align: start;
+}
+
+main aside .section-carrinho div table td {
+    color: #F5F5F5;
+    text-align: end;
+}
