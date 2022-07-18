@@ -142,31 +142,48 @@ tagNav.addEventListener("click", categorias)
 
 function categorias(event) {
     if(event.target.tagName == "BUTTON") {
+        estiloCategorias(event.target)
         renderizarVitrine(data, event.target.innerText)
     }
+}
+
+function estiloCategorias(btn = tagNav.firstElementChild) {
+    for(let i = 0; i < tagNav.children.length; i++) {
+        tagNav.children[i].classList.remove("btn-atual")
+    }
+    btn.className = "btn-atual"
 }
 
 // Barra de Pesquisa
 let sectionPesquisa = document.querySelector(".section-pesquisa")
 let input = sectionPesquisa.children[0]
 
-sectionPesquisa.addEventListener("click", pesquisarProduto)
-
-function pesquisarProduto(event) {
+sectionPesquisa.addEventListener("click", (event) => {
     if(event.target.tagName == "BUTTON") {
-        let produtosFiltrados = []
-
-        produtosFiltrados = data.filter((element) => {
-            let inputTratado = input.value.toLowerCase().trim()
-            let produto = element.nameItem.toLowerCase()
-            let categoria = element.tag[0].toLowerCase()
-            
-            if(produto.includes(inputTratado) || categoria.includes(inputTratado)) {
-                return element
-            }
-        })
-
-        input.value = ""
-        renderizarVitrine(produtosFiltrados)
+        pesquisarProduto()
     }
+})
+
+input.addEventListener("keyup", (event) => {
+    if(event.key == "Enter") {
+        pesquisarProduto()
+    }
+})
+
+function pesquisarProduto() {
+    estiloCategorias()
+    let produtosFiltrados = []
+
+    produtosFiltrados = data.filter((element) => {
+        let inputTratado = input.value.toLowerCase().trim()
+        let produto = element.nameItem.toLowerCase()
+        let categoria = element.tag[0].toLowerCase()
+        
+        if(produto.includes(inputTratado) || categoria.includes(inputTratado)) {
+            return element
+        }
+    })
+
+    input.value = ""
+    renderizarVitrine(produtosFiltrados)
 }

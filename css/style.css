@@ -54,7 +54,7 @@ header .container nav button {
     transition: 0.3s;
 }
 
-header .container nav button:nth-child(1) {
+header .container nav .btn-atual {
     font-weight: 600;
     color: #292929;
 }
