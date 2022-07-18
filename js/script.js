@@ -1,13 +1,28 @@
 let ulVitrine = document.querySelector(".vitrine ul")
 
 // Vitrine
-function renderizarVitrine(produtos) {
+function renderizarVitrine(produtos, categoria = "Todos") {
     ulVitrine.innerHTML = ""
+    let contador = 0
 
     produtos.forEach((element) => {
-        let card = cardVitrine(element)
-        ulVitrine.appendChild(card)
+        if(categoria !== "Todos") {
+            if(element.tag[0] == categoria) {
+                let card = cardVitrine(element)
+                ulVitrine.appendChild(card)
+                contador++
+            }
+        } else {
+            let card = cardVitrine(element)
+            ulVitrine.appendChild(card)
+            contador++
+        }
     })
+    if(contador == 0) {
+        ulVitrine.innerHTML = `
+            <p>ESTA CATEGORIA NÃO POSSUI ITENS ANUNCIADOS</p>
+        `
+    }
 }
 
 renderizarVitrine(data)
@@ -118,5 +133,15 @@ function removerDoCarrinho(event) {
     if(event.target.tagName == "BUTTON") {
         carrinho.splice(event.target.id, 1)
         renderizarCarrinhoDeCompras(carrinho)
+    }
+}
+
+// Menu de Navegação
+let tagNav = document.querySelector("header nav")
+tagNav.addEventListener("click", categorias)
+
+function categorias(event) {
+    if(event.target.tagName == "BUTTON") {
+        renderizarVitrine(data, event.target.innerText)
     }
 }

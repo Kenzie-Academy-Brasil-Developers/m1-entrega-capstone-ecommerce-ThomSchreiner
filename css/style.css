@@ -80,7 +80,15 @@ main .vitrine ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 2%;
+}
+
+main .vitrine ul p:first-child {
+    font-weight: 700;
+    font-size: 22px;
+    color: #292929;
+    padding: 154px 120px;
+    background-color: #F5F5F5;
 }
 
 main .vitrine ul li {
