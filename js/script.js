@@ -48,8 +48,8 @@ function renderizarCarrinhoDeCompras(produtos) {
     } else {
         let ul = document.createElement("ul")
 
-        produtos.forEach((element) => {
-            let card = cardCarrinho(element)
+        produtos.forEach((element, i) => {
+            let card = cardCarrinho(element, i)
             ul.appendChild(card)
         })
     
@@ -63,7 +63,7 @@ function renderizarCarrinhoDeCompras(produtos) {
 renderizarCarrinhoDeCompras(carrinho)
 
 
-function cardCarrinho(produto) {
+function cardCarrinho(produto, index) {
     let li = document.createElement("li")
 
     li.innerHTML = `
@@ -74,7 +74,7 @@ function cardCarrinho(produto) {
         <div>
             <p>${produto.nameItem}</p>
             <p class="preco">R$ ${produto.value},00</p>
-            <button id="${produto.id}">Remover produto</button>
+            <button id="${index}">Remover produto</button>
         </div>
     `
     return li
@@ -101,4 +101,22 @@ function valorCarrinho(produtos) {
     return table
 }
 
+// Botão Adicionar ao Carrinho
+ulVitrine.addEventListener("click", adicionarAoCarrinho)
 
+function adicionarAoCarrinho(event) {
+    if(event.target.tagName == "BUTTON") {
+        carrinho.push(data[event.target.id - 1])
+        renderizarCarrinhoDeCompras(carrinho)
+    }
+}
+
+// Botão Remover do Carrinho
+divCarrinho.addEventListener("click", removerDoCarrinho)
+
+function removerDoCarrinho(event) {
+    if(event.target.tagName == "BUTTON") {
+        carrinho.splice(event.target.id, 1)
+        renderizarCarrinhoDeCompras(carrinho)
+    }
+}
