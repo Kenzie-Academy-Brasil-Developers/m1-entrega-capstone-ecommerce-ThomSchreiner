@@ -214,10 +214,11 @@ main aside .section-carrinho p {
     padding: 13px 0;
 }
 
-main aside .section-carrinho div {}
+main aside .section-carrinho div {
+    background-color: #F5F5F5;
+}
 
 main aside .section-carrinho div ul {
-    background-color: #F5F5F5;
     display: flex;
     flex-direction: column;
     padding: 25px 20px 0 15px;
@@ -278,6 +279,24 @@ main aside .section-carrinho div ul li div button:hover {
     text-decoration-color: #2E245E;
     color: #2E245E;
     transition: 0.5s;
+}
+
+main aside .section-carrinho div span {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+    color: #292929;
+    display: block;
+    text-align: center;
+    padding-top: 80px;
+}
+
+main aside .section-carrinho div span:nth-child(2) {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #242424;
+    padding: 10px 0 80px 0;
 }
 
 main aside .section-carrinho div table {
