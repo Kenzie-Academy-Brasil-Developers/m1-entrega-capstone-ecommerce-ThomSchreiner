@@ -190,6 +190,7 @@ main aside .section-pesquisa input {
     font-weight: 400;
     font-size: 14px;
     color: #242424;
+    outline: none;
 }
 
 main aside .section-pesquisa button {
