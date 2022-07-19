@@ -187,3 +187,24 @@ function pesquisarProduto() {
     input.value = ""
     renderizarVitrine(produtosFiltrados)
 }
+
+// Dark Mode
+let darkButton = document.querySelector("header nav img")
+let site = document.querySelector("html")
+
+darkButton.addEventListener("click", darkMode)
+
+function darkMode() {
+    
+    if(site.className !== "dark-mode") {
+        site.className = "dark-mode"
+        darkButton.src = "img/DarkMode.png"
+        darkButton.alt = "Tema escuro"
+        darkButton.title = "Tema escuro - Deseja alterar para o claro? Se sim, clique aqui."
+    } else {
+        site.classList.remove("dark-mode")
+        darkButton.src = "img/LightMode.png"
+        darkButton.alt = "Tema claro"
+        darkButton.title = "Tema claro - Deseja alterar para o escuro? Se sim, clique aqui."
+    }
+}

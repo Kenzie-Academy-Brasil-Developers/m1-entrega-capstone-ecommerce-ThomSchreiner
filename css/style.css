@@ -1,3 +1,31 @@
+:root {
+    --texto-generico-color:    #242424;
+    --nome-destaque-color:     #292929;
+    --card-preco-color:        #2E245E;
+    --carrinho-destaque-color: #333333;
+    --cinza-claro-color:       #F5F5F5;
+    --branco-color:            #FFFFFF;
+    --branco-bg:               #FFFFFF;
+    --azul-claro-bg:           #37268C;
+    --azul-escuro-bg:          #2E245E;
+    --cinza-claro-bg:          #F5F5F5;
+    --cinza-escuro-bg:         #292929;
+    --roxo-claro-hover:        #7B61FF;
+}
+
+.dark-mode:root {
+    --texto-generico-color:    #FFFFFF;
+    --nome-destaque-color:     #FFFFFF;
+    --card-preco-color:        #7B61FF;
+    --carrinho-destaque-color: #FFFFFF;
+    --cinza-claro-color:       #F5F5F5;
+    --branco-color:            #FFFFFF;
+    --branco-bg:               #292929;
+    --azul-claro-bg:           #2E245E;
+    --azul-escuro-bg:          #2E245E;
+    --cinza-claro-bg:          #333333;
+    --cinza-escuro-bg:         #242424;
+}
 /* Reset Style */
 * {
     margin: 0;
@@ -6,10 +34,15 @@
     list-style: none;
     border: none;
     font-family: 'Inter', sans-serif;
-    
+    transition: 0.3s;
 }
 
 /* Classe geral */
+body {
+    background-color: var(--branco-bg);
+    
+}
+
 .container {
     width: 1200px;
 }
@@ -17,7 +50,7 @@
 /* Cabeçalho */
 header {
     height: 70px;
-    background: #FFFFFF;
+    background-color: var(--branco-bg);
     box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.25);
     display: flex;
     position: fixed;
@@ -34,7 +67,7 @@ header .container {
 }
 
 header .container div h1 {
-    color: #292929;
+    color: var(--nome-destaque-color);
     font-weight: 700;
     font-size: 30px;
 }
@@ -45,10 +78,10 @@ header .container nav {
 }
 
 header .container nav button {
-    background-color: #FFFFFF;
+    background-color: var(--branco-bg);
     font-weight: 400;
     font-size: 16px;
-    color: #242424;
+    color: var(--texto-generico-color);
     cursor: pointer;
     padding: 7px 11px;
     transition: 0.3s;
@@ -56,14 +89,20 @@ header .container nav button {
 
 header .container nav .btn-atual {
     font-weight: 600;
-    color: #292929;
+    color: var(--nome-destaque-color);
 }
 
 header .container nav button:hover {
-    background-color: #37268C;
-    color: #FFFFFF;
+    background-color: var(--azul-claro-bg);
+    color: var(--branco-color);
     transition: 0.3s;
 }
+
+header .container nav img {
+    height: 36px;
+    cursor: pointer;
+}
+
 
 /* Página principal */
 main {
@@ -86,29 +125,29 @@ main .vitrine ul {
 main .vitrine ul p:first-child {
     font-weight: 700;
     font-size: 22px;
-    color: #292929;
+    color: var(--nome-destaque-color);
     padding: 154px 120px;
-    background-color: #F5F5F5;
+    background-color: var(--cinza-claro-bg);
 }
 
 main .vitrine ul li {
     width: 32%;
     margin-bottom: 20px;
-    border: 2px solid #F5F5F5;
+    border: 2px solid var(--cinza-claro-bg);
     transition: 0.2s;
 }
 
 main .vitrine ul li:hover {
-    border-color: #7B61FF;
+    border-color: var(--roxo-claro-hover);
     transition: 0.2s;
 }
 
 
 main .vitrine ul li figure {
-    background: #F5F5F5;
+    background: var(--cinza-claro-bg);
     display: flex;
     justify-content: center;
-    border: 4px solid #F5F5F5;
+    border: 4px solid var(--cinza-claro-bg);
 }
 
 main .vitrine ul li figure img {
@@ -125,9 +164,9 @@ main .vitrine ul li article {
 
 main .vitrine ul li article p:nth-child(1) {
     display: inline-block;
-    background-color: #2E245E;
+    background-color: var(--azul-escuro-bg);
     padding: 5px 12px;
-    color: #FFFFFF;
+    color: var(--branco-color);
     font-weight: 400;
     font-size: 12px;
 }
@@ -135,25 +174,25 @@ main .vitrine ul li article p:nth-child(1) {
 main .vitrine ul li article p:nth-child(2) {
     font-weight: 700;
     font-size: 18px;
-    color: #292929;
+    color: var(--nome-destaque-color);
 }
 
 main .vitrine ul li article span {
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    color: #242424;
+    color: var(--texto-generico-color);
 }
 
 main .vitrine ul li article .preco {
     font-weight: 600;
     font-size: 14px;
-    color: #2E245E;
+    color: var(--card-preco-color);
 }
 
 main .vitrine ul li article button {
-    background-color: #FFFFFF;
-    color: #242424;
+    background-color: transparent;
+    color: var(--texto-generico-color);
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
@@ -163,8 +202,8 @@ main .vitrine ul li article button {
 }
 
 main .vitrine ul li article button:hover {
-    color: #2E245E;
-    text-decoration-color: #2E245E;
+    color: var(--card-preco-color);
+    text-decoration-color: var(--card-preco-color);
     transition: 0.5s;
 }
 
@@ -183,19 +222,19 @@ main aside .section-pesquisa {
 
 main aside .section-pesquisa input {
     height: 50px;
-    background: #F5F5F5;
-    border: 1px solid #F5F5F5;
+    background: var(--cinza-claro-bg);
+    border: 1px solid var(--cinza-claro-bg);
     padding-left: 13px;
     width: 70%;
     font-weight: 400;
     font-size: 14px;
-    color: #242424;
+    color: var(--texto-generico-color);
     outline: none;
 }
 
 main aside .section-pesquisa button {
-    background-color: #2E245E;
-    color: #FFFFFF;
+    background-color: var(--azul-claro-bg);
+    color: var(--branco-color);
     font-weight: 500;
     font-size: 16px;
     padding: 0 20px;
@@ -204,7 +243,7 @@ main aside .section-pesquisa button {
 }
 
 main aside .section-pesquisa button:hover {
-    background-color: #37268C;
+    background-color: var(--card-preco-color);
     transition: 0.3s;
 }
 
@@ -214,17 +253,17 @@ main aside .section-carrinho {
 }
 
 main aside .section-carrinho p {
-    background: #37268C;
+    background-color: var(--azul-claro-bg);
     font-weight: 700;
     font-size: 18px;
-    color: #FFFFFF;
+    color: var(--branco-color);
     width: 100%;
     text-align: center;
     padding: 13px 0;
 }
 
 main aside .section-carrinho div {
-    background-color: #F5F5F5;
+    background-color: var(--cinza-claro-bg);
 }
 
 main aside .section-carrinho div ul {
@@ -244,7 +283,7 @@ main aside .section-carrinho div ul li {
 main aside .section-carrinho div ul li figure {
     display: flex;
     align-items: center;
-    background-color: #FFFFFF;
+    background-color: var(--branco-bg);
 }
 
 main aside .section-carrinho div ul li figure img {
@@ -261,14 +300,14 @@ main aside .section-carrinho div ul li div {
 main aside .section-carrinho div ul li div p {
     font-weight: 700;
     font-size: 16px;
-    color: #333333;
-    background-color: #F5F5F5;
+    color: var(--carrinho-destaque-color);
+    background-color: var(--cinza-claro-bg);
     padding: 0;
     text-align: start;
 }
 
 main aside .section-carrinho div ul li div p:nth-child(2) {
-    color: #2E245E;
+    color: var(--card-preco-color);
     font-weight: 600;
     font-size: 14px;
 }
@@ -276,8 +315,8 @@ main aside .section-carrinho div ul li div p:nth-child(2) {
 main aside .section-carrinho div ul li div button {
     font-weight: 400;
     font-size: 14px;
-    color: #242424;
-    background-color: #F5F5F5;
+    color: var(--texto-generico-color);
+    background-color: transparent;
     text-align: start;
     cursor: pointer;
     text-decoration: underline;
@@ -286,8 +325,8 @@ main aside .section-carrinho div ul li div button {
 }
 
 main aside .section-carrinho div ul li div button:hover {
-    text-decoration-color: #2E245E;
-    color: #2E245E;
+    text-decoration-color: var(--card-preco-color);
+    color: var(--card-preco-color);
     transition: 0.5s;
 }
 
@@ -295,7 +334,7 @@ main aside .section-carrinho div span {
     font-weight: 700;
     font-size: 22px;
     line-height: 24px;
-    color: #292929;
+    color: var(--nome-destaque-color);
     display: block;
     text-align: center;
     padding-top: 80px;
@@ -305,12 +344,12 @@ main aside .section-carrinho div span:nth-child(2) {
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-    color: #242424;
+    color: var(--texto-generico-color);
     padding: 10px 0 80px 0;
 }
 
 main aside .section-carrinho div table {
-    background-color: #292929;
+    background-color: var(--cinza-escuro-bg);
     width: 100%;
     padding: 15px;
 
@@ -321,12 +360,12 @@ main aside .section-carrinho div table tr {
 }
 
 main aside .section-carrinho div table th {
-    color: #FFFFFF;
+    color: var(--branco-color);
     font-weight: 600;
     text-align: start;
 }
 
 main aside .section-carrinho div table td {
-    color: #F5F5F5;
+    color: var(--cinza-claro-color);
     text-align: end;
 }
