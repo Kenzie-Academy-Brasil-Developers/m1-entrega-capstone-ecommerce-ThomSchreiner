@@ -176,10 +176,10 @@ function pesquisarProduto() {
 
     produtosFiltrados = data.filter((element) => {
         let inputTratado = input.value.toLowerCase().trim()
-        let produto = element.nameItem.toLowerCase()
+        let nomeProduto = element.nameItem.toLowerCase()
         let categoria = element.tag[0].toLowerCase()
         
-        if(produto.includes(inputTratado) || categoria.includes(inputTratado)) {
+        if(nomeProduto.includes(inputTratado) || categoria.includes(inputTratado)) {
             return element
         }
     })
@@ -190,19 +190,19 @@ function pesquisarProduto() {
 
 // Dark Mode
 let darkButton = document.querySelector("header nav img")
-let site = document.querySelector("html")
+let TagHtml = document.querySelector("html")
 
 darkButton.addEventListener("click", darkMode)
 
 function darkMode() {
     
-    if(site.className !== "dark-mode") {
-        site.className = "dark-mode"
+    if(TagHtml.className !== "dark-mode") {
+        TagHtml.className = "dark-mode"
         darkButton.src = "img/DarkMode.png"
         darkButton.alt = "Tema escuro"
         darkButton.title = "Tema escuro - Deseja alterar para o claro? Se sim, clique aqui."
     } else {
-        site.classList.remove("dark-mode")
+        TagHtml.classList.remove("dark-mode")
         darkButton.src = "img/LightMode.png"
         darkButton.alt = "Tema claro"
         darkButton.title = "Tema claro - Deseja alterar para o escuro? Se sim, clique aqui."
